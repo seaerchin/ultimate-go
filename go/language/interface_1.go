@@ -34,10 +34,10 @@ type reader interface {
 // A concrete type is any type that can have a method. Only user defined type can have a method.
 // Method allows a piece of data to expose capabilities, primarily around interfaces.
 // file defines a system file.
-// It is a concrete type because the have the method read below. It is identical to the method in
+// It is a concrete type because it has the method read below. It is identical to the method in
 // the reader interface. Because of this, we can say the concrete type file implements the reader
 // interface using a value receiver.
-// There is no fancy syntax. The complier can recognize the implementation here.
+// There is no fancy syntax. The compiler can automatically recognize the implementation here.
 
 // ------------
 // Relationship
@@ -81,7 +81,7 @@ func main() {
 	// The compiler will ask: Does this file value implement the reader interface?
 	// The answer is Yes because there is a method there using the value receiver that implements
 	// its contract.
-	// The second word of the interface value will store its won copy of f. The first word points
+	// The second word of the interface value will store its own copy of f. The first word points
 	// to a special data structure that we call the iTable.
 	// The iTable serves 2 purposes:
 	// - The first part describes the type of value being stored. In our case, it is the file value.
@@ -104,14 +104,14 @@ func main() {
 	// implementation of read for this type of value.
 	retrieve(f)
 
-	// Similar with p. Now the first word of reader interface point to pipe, not file and the
-	// second word points to a copy of pip value.
+	// Similar with p. Now the first word of reader interface points to pipe, not file and the
+	// second word points to a copy of pipe value.
 
 	//       reader           iTable
 	//    -----------        -------
 	//   |           |      |  pipe  |
 	//   |     *     | -->   -------
-	//   |           |      |    *   | --> code
+	//   |           |      |   *    | --> code
 	//    -----------        --------
 	//   |           |       --------
 	//   |     *     | -->  | p copy | --> read()
@@ -139,7 +139,7 @@ func main() {
 // This is called a polymorphic function.
 // The parameter is being used here is the reader type. But it is valueless. What does it mean?
 // This function will accept any data that implement the reader contract.
-// This function now nothing about the concrete and it is completely decoupled.
+// This function knows nothing about the concrete and it is completely decoupled.
 // It is the highest level of decoupling we can get. The algorithm is still efficient and compact.
 // All we have is a level of indirection to the concrete type data values in order to be able to
 // execute the algorithm.

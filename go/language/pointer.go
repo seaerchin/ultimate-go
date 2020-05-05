@@ -50,7 +50,7 @@ func main() {
 	// Pass the "value of" count.
 	increment1(count)
 
-	// Printing out the result of count. Nothing is change.
+	// Printing out the result of count. Nothing has changed.
 	println("count:\tValue Of[", count, "]\tAddr Of[", &count, "]")
 
 	// Pass the "address of" count.
@@ -86,7 +86,7 @@ func increment2(inc *int) {
 }
 
 // stayOnStack shows how the variable does not escape.
-// Since we know the size of the user value at compiled time, the complier will put this on a stack
+// Since we know the size of the user value at compiled time, the compiler will put this on a stack
 // frame.
 func stayOnStack() user {
 	// In the stayOnStack stack frame, create a value and initialize it.
@@ -107,7 +107,7 @@ func stayOnStack() user {
 // semantic.
 
 // You might think about what we have after this call is: main has a pointer to a value that is
-// on a stack frame below. It is the case then we are in trouble.
+// on a stack frame below. If this is the case, then we are in trouble.
 // Once we come back up the call stack, this memory is there but it is reusable again. It is no
 // longer valid. Anytime now main makes a function call, we need to allocate the frame and
 // initialize it.
@@ -128,7 +128,7 @@ func stayOnStack() user {
 // In the stayOnStack function, because we are passing the copy of the value itself, it is safe to
 // keep these things on the stack. But when we SHARE something above the call stack like this,
 // escape analysis said this memory is no longer be valid when we get back to main, we must put it
-// out there on the heap. main is end up having a pointer to the heap.
+// out there on the heap. main will end up having a pointer to the heap.
 // In fact, this allocation happens immediately on the heap. escapeToHeap is gonna have a pointer
 // to the heap. But u is gonna base on value semantic.
 func escapeToHeap() *user {
@@ -152,7 +152,7 @@ func escapeToHeap() *user {
 // cost.
 
 // Because stack can grow, no Goroutine can have a pointer to some other Goroutine stack.
-// There would be too much overhead for complier to keep track of every pointer. The latency will
+// There would be too much overhead for compiler to keep track of every pointer. The latency will
 // be insane.
 // -> The stack for a Goroutine is only for that Goroutine only. It cannot be shared between
 // Goroutine.
@@ -162,7 +162,7 @@ func escapeToHeap() *user {
 // ------------------
 
 // Once something is moved to the heap, Garbage Collection has to get in.
-// The most important thing about the Garbage Collector (GC) is the pacinng algorithm.
+// The most important thing about the Garbage Collector (GC) is the pacing algorithm.
 // It determines the frequency/pace that the GC has to run in order to maintain the smallest t as
 // possible.
 

@@ -1,7 +1,23 @@
-# Ultimate Go
+# Ultimate Go study guide
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/hoanhan101/ultimate-go)
 ](https://goreportcard.com/report/github.com/hoanhan101/ultimate-go)
+![](https://img.shields.io/github/stars/hoanhan101/ultimate-go)
+![](https://img.shields.io/github/forks/hoanhan101/ultimate-go)
+[![hackernews](https://img.shields.io/badge/hackernews-450%2B-orange)](https://news.ycombinator.com/item?id=20701671)
+[![r/golang](https://img.shields.io/badge/r/golang-255%2B-orange)](https://www.reddit.com/r/golang/comments/cqqi9h/ultimate_go_study_guides_with_heavily_documented/)
+[![r/compsci](https://img.shields.io/badge/r/compsci-60%2B-orange)](https://www.reddit.com/r/compsci/comments/cr3jzh/ultimate_go_study_guides_with_heavily_documented/)
+[![r/programming](https://img.shields.io/badge/r/programming-40%2B-orange)](https://www.reddit.com/r/programming/comments/cr3gqu/ultimate_go_study_guides_with_heavily_documented/)
+
+> [101+ coding interview problems with detailed solutions, test cases, and program analysis →](https://github.com/hoanhan101/algo)
+
+> [Join my mailing list to get the latest updates here →](https://tinyletter.com/hoanhan)
+
+<p align="center">
+  <img src="gopher.png" alt="gopher" width="300"/>
+</p>
+
+## Motivation
 
 This repo contains my notes on learning Go and computer systems. Different people have different
 learning style. For me, I learn best by doing and walking through examples. Hence, I am trying to
@@ -11,27 +27,8 @@ the theories behind the scene.
 
 In the mix, I also include links to other articles that I find helpful.
 
-**References:**
-
-- [Ultimate Go
-  Programming](https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/)
-- [ardanlabs/gotraining/topics/courses/go
-  ](https://github.com/ardanlabs/gotraining/blob/master/topics/courses/go/README.md)
-- [Computer Systems: A Programmer's
-  Perspective](https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X)
-
-## Project Status
-
-It is an on-going project.
-
-Below are the outline of the all topics. Normally, a topic is covered when there is a link, 
-or several links next to it.
-
-**Tasks**
-
-- [x] Phase 1: Finish Ultimate Go Programming's video lectures
-- [x] Phase 2: Fill in all the missing details using Ardan Labs's links and examples
-- [ ] Phase 3: Study Computer Systems book to reinforce the theory. Build more programs if needed.
+If you’re interested in getting updates for this, feel free to join my [mailing 
+list here →](https://tinyletter.com/hoanhan)
 
 ## Table of Contents 
 
@@ -39,21 +36,16 @@ or several links next to it.
   [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/go/README.md)
 - **Language Mechanics**
   - **Syntax**
-    - Variable: [Built-in types | Zero value concept | Initialization | Conversion vs Casting
-      ](go/language/variable.go)
+    - Variable: [Built-in types | Zero value concept | Initialization | Conversion vs Casting](go/language/variable.go)
     - Struct: [Initialization | Name type vs Anonymous type](go/language/struct.go)
     - Pointer: 
-      - [Passing by value | Escape analysis | Stack space | Garbage Collection
-        ](go/language/pointer.go)
-      - [Golang's Code Review Receiver
-        Type](https://github.com/golang/go/wiki/CodeReviewComments#receiver-type)
+      - [Passing by value | Escape analysis | Stack space | Garbage Collection](go/language/pointer.go)
+      - [Golang's Code Review Receiver Type](https://github.com/golang/go/wiki/CodeReviewComments#receiver-type)
     - Constant: [Initialization | iota](go/language/constant.go)
     - Function: [Initialization](go/language/function.go)
   - **Data Structures**
-    - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory
-      allocation](go/language/array.go)
-    - Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice |
-      Copy of Sice | UTF-8](go/language/slice.go)
+    - Array: [CPU Cache | TLB | Initialization | Iteration | Type array | Contiguous memory allocation](go/language/array.go)
+    - Slice: [Initialization | Length vs Capacity | Reference Type | Appending | Slice of Slice | Copy of Slice | UTF-8](go/language/slice.go)
     - Map: [Initialization | Iteration | Deleting | Finding | Restriction ](go/language/map.go)
   - **Decoupling**
     - Method: 
@@ -99,10 +91,10 @@ or several links next to it.
     - [Error variables](go/design/error_2.go)
     - [Type as context](go/design/error_3.go)
     - [Behavior as context](go/design/error_4.go)
-    - [Finding the bug](go/design/error_5.go)
+    - [Finding the bug/pitfall of nil value of error interface](go/design/error_5.go)
     - [Wrapping Errors](go/design/error_6.go)
-  - Packaging:
-    [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/go/design/packaging/README.md)
+  - Packaging: [Guideline](https://github.com/ardanlabs/gotraining/blob/master/topics/go/design/packaging/README.md)
+  - Dependency management: [Go Modules](https://blog.golang.org/using-go-modules)
 - **Concurrency**
   - **Mechanics**
     - Goroutine: 
@@ -118,9 +110,7 @@ or several links next to it.
     - Channel: 
       - [Guideline](https://github.com/ardanlabs/gotraining/tree/master/topics/go#concurrent-software-design)
       - [Language Mechanics | Unbuffered channel: Signaling with(out) data](go/concurrency/channel_1.go)
-      - [Unbuffered channel: Double signal | Buffered channel: Close and range | Unbuffered
-        channel: select and receive | Unbuffered channel: select and send | Buffered channel:
-        Select and drop](go/concurrency/channel_2.go)
+      - [Unbuffered channel: Double signal | Buffered channel: Close and range | Unbuffered channel: select and receive | Unbuffered channel: select and send | Buffered channel: Select and drop](go/concurrency/channel_2.go)
       - [Unbuffered channel (Tennis match)](go/concurrency/channel_3.go)
       - [Unbuffered channel (Replay race)](go/concurrency/channel_4.go)
       - [Buffered channel: Fan Out](go/concurrency/channel_5.go)
@@ -151,9 +141,15 @@ or several links next to it.
   - Profiling
     - Stack Trace: [Review](go/profiling/stack_trace_1.go) | [Packing](go/profiling/stack_trace_2.go)
     - GODEBUG: [Memory Tracing](go/profiling/memory_tracing.go)
-- **Packages**
-  - Context
-  - Encoding
-  - IO
-  - Logging
-  - Reflection
+
+## For more resources:
+
+- [Ultimate Go Programming](https://www.safaribooksonline.com/library/view/ultimate-go-programming/9780134757476/)
+- [ardanlabs/gotraining/topics/courses/go](https://github.com/ardanlabs/gotraining/blob/master/topics/courses/go/README.md)
+- [Computer Systems: A Programmer's Perspective](https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X)
+- [Free Gophers Pack](https://github.com/MariaLetta/free-gophers-pack)
+- [Thoughts on Go performance optimization](https://github.com/dgryski/go-perfbook)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/hoanhan101/ultimate-go.svg)](https://starchart.cc/hoanhan101/ultimate-go)

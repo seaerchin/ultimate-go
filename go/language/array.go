@@ -6,7 +6,7 @@
 // What store in caches are data and instruction.
 
 // Cache speed from fastest to slowest: L1 -> L2 -> L3 -> main memory.
-// Scott Meyers: "If performance matter then the total memeory you have is the total amount of
+// Scott Meyers: "If performance matter then the total memory you have is the total amount of
 // caches" -> access to main memory is incredibly slow; practically speaking it might not even be there.
 
 // How do we write code that can be sympathetic with the caching system to make sure that
@@ -179,7 +179,7 @@ func main() {
 	// Contiguous memory allocations
 	// -----------------------------
 
-	// Declare an array of 5 strings initialized with values.
+	// Declare an array of 6 strings initialized with values.
 	six := [6]string{"Annie", "Betty", "Charley", "Doug", "Edward", "Hoanh"}
 
 	// Iterate over the array displaying the value and address of each element.
